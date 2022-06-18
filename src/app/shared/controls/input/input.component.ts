@@ -24,9 +24,10 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   value!: string;
   isDisabled: boolean = false;
 
-  constructor() { }
+  constructor() { /* TODO document why this constructor is empty */  }
 
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty  
   }
 
   private propagateChange: any = () => { }
