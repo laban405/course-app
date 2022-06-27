@@ -19,10 +19,11 @@ type Value = number | null;
 export class DateComponent implements OnInit, ControlValueAccessor {
 
   @Input() placeholder!: string;
-  @Input() min!: Date;
-  @Input() max!: Date;
+  @Input() min!: Date | null ;
+  @Input() max!: Date | null;
 
   @Output() changed = new EventEmitter<Value>()
+  @Output() closed = new EventEmitter<void>()
 
   value!: Value;
   isDisabled!: boolean;
@@ -63,9 +64,8 @@ export class DateComponent implements OnInit, ControlValueAccessor {
   }
 
   onClosed(): void {
-
-    this.propagateTouched()
-
+    this.propagateTouched();
+    this.closed.emit();
   }
 
 }

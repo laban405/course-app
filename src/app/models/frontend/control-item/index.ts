@@ -4,6 +4,6 @@ export type Value = number | string | boolean
 
 export interface ControlItem {
     value: Value;
-    label: String;
+    label: string;
     icon?: Icon;
 }
