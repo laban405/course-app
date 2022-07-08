@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import {environment} from "@src/environments/environment"
+import { environment } from "@src/environments/environment"
 
 @Component({
   selector: 'app-root',
@@ -11,12 +11,10 @@ export class AppComponent implements OnInit {
   title = 'course-app';
 
   constructor(
-    private afs:AngularFirestore
-  ){}
+    private afs: AngularFirestore
+  ) { }
 
-  ngOnInit(){
-this.afs.collection('test').snapshotChanges().subscribe(items=>{
-  console.log(items.map((x)=>x.payload.doc.data()))
-})
+  ngOnInit() {
+    
   }
 }
